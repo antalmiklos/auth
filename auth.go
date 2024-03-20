@@ -10,10 +10,8 @@ import (
 	"github.com/zitadel/oidc/v3/example/server/storage"
 )
 
-func StartAuthServer() {
-	//we will run on :9998
-	port := "9998"
-	//which gives us the issuer: http://localhost:9998/
+func StartAuthServer(listenPort string) {
+	port := listenPort
 	issuer := fmt.Sprintf("http://localhost:%s/", port)
 
 	// the OpenIDProvider interface needs a Storage interface handling various checks and state manipulations
